@@ -1,78 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Booking Page</title>
-  <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Booking Page</title>
+    <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-  <main class="page">
-    <header class="hero">
-      <h1>My Booking Page</h1>
-      <p>This is your booking page. Enjoy your stay and make the most of your experience!</p>
-    </header>
+    <main class="page">
+        <header class="hero">
+            <h1>My Booking Page</h1>
+            <p>This is your booking page. Enjoy your stay and make the most of your experience!</p>
+        </header>
 
-    <section class="bookings">
-      <h2>Upcoming Bookings</h2>
+        <section class="bookings">
+            <h2>Upcoming Bookings</h2>
 
-      <article class="movie">
-        <div class="ticket-poster">
-          <img src="https://imgs.search.brave.com/aIWxgK6DmAuA4XkGcPPrCWc7543Bi3TD61bfllUMw_E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi85Lzk0L1Nw/aWRlci1NYW5fQnJh/bmRfTmV3X0RheV9M/b2dvLnN2Zy8yNTBw/eC1TcGlkZXItTWFu/X0JyYW5kX05ld19E/YXlfTG9nby5zdmcu/cG5nP3V0bV9zb3Vy/Y2U9d3d3Lndpa2lk/YXRhLm9yZyZhbXA7/dXRtX2NhbXBhaWdu/PXJlc3QmYW1wO3V0/bV9jb250ZW50PXRo/dW1ibmFpbA" alt="Spider-Man poster">
-        </div>
-        <div class="ticket-info">
-          <h3 class="movie-title">Spider-Man: Brand New Day</h3>
-          <div class="movie-meta">
-            <section class="genre">Action</section>
-            <section class="divider">•</section>
-            <section class="duration">2h 4min</section>
-          </div>
-          <div class="showtime-badge">Showtime: <strong>7:00 PM</strong></div>
-        </div>
-        <div class="ticket-stub">
-          <div class="barcode"></div>
-          <section class="stub-code">#TKT-9482</section>
-        </div>
-      </article>
+            <article class="movie">
+                <div class="ticket-poster">
+                    <img src="https://imgs.search.brave.com/Fz1tPsDVl_m8iHYxzRLQstanwCuxO76C--ffXRCy6J8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/bmV3LXNwaWRlci1t/YW4tYnJhbmQtbmV3/LWRheS1wb3N0ZXJz/LXYwLTBlbGRzb3h6/ajd2ZzEuanBlZz93/aWR0aD0zNjUmZm9y/bWF0PXBqcGcmYXV0/bz13ZWJwJnM9YTQ5/YmIxYjExNGVhMWVh/NzliMmJhNDdmMjhm/MjdjY2M0NWNkMjEy/Zg"
+                        alt="Spider-Man poster">
+                </div>
+                <div class="ticket-info">
+                    <h3 class="movie-title">Spider-Man: Brand New Day</h3>
+                    <div class="movie-meta">
+                        <section class="genre">Action</section>
+                        <section class="divider">•</section>
+                        <section class="duration">2h 4min</section>
+                    </div>
+                    <div class="showtime-badge">Release date: <strong>Fri, Jul 31, 2026</strong></div>
+                </div>
+                <div class="ticket-stub">
+                    <div class="barcode"></div>
+                    <section class="stub-code">#TKT-9482</section>
+                    <p class="booking-status">Not booked</p>
+                </div>
+            </article>
 
-      <article class="movie">
-        <div class="ticket-poster">
-          <img src="https://imgs.search.brave.com/el0wK4cMaNaQnK-VH93N9CAbwko9xeNvKyDERc0dFuo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2JmLzlj/L2ZlL2JmOWNmZTNh/NTdiNzVlNzRlYTkw/OThmNWYxYmRhZGYx/LmpwZw" alt="The Odyssey poster">
-        </div>
-        <div class="ticket-info">
-          <h3 class="movie-title">The Odyssey</h3>
-          <div class="movie-meta">
-            <section class="genre">Adventure</section>
-            <section class="divider">•</section>
-            <section class="duration">2h 19min</section>
-          </div>
-          <div class="showtime-badge">Showtime: <strong>8:30 PM</strong></div>
-        </div>
-        <div class="ticket-stub">
-          <div class="barcode"></div>
-          <section class="stub-code">#TKT-1047</section>
-        </div>
-      </article>
+            <article class="movie">
+                <div class="ticket-poster">
+                    <img src="https://imgs.search.brave.com/el0wK4cMaNaQnK-VH93N9CAbwko9xeNvKyDERc0dFuo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2JmLzlj/L2ZlL2JmOWNmZTNh/NTdiNzVlNzRlYTkw/OThmNWYxYmRhZGYx/LmpwZw"
+                        alt="The Odyssey poster">
+                </div>
+                <div class="ticket-info">
+                    <h3 class="movie-title">The Odyssey</h3>
+                    <div class="movie-meta">
+                        <section class="genre">Adventure</section>
+                        <section class="divider">•</section>
+                        <section class="duration">2h 19min</section>
+                    </div>
+                    <div class="showtime-badge">Release date: <strong>Fri, Jul 17, 2026</strong></div>
+                </div>
+                <div class="ticket-stub">
+                    <div class="barcode"></div>
+                    <section class="stub-code">#TKT-1047</section>
+                    <p class="booking-status">Not booked</p>
+                </div>
+            </article>
 
-      <article class="movie">
-        <div class="ticket-poster">
-          <img src="https://imgs.search.brave.com/5DHP4OH4o6bOSbVHnmIJEPJmLO-Tj7onEEOlDZphwRs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QlpEUmhNR1V5/TmprdE1UUmpZUzAw/TkRFd0xUaGhOemN0/TldObE1EY3pZemcx/TW1ZeFhrRXlYa0Zx/Y0dkZVFXcG5ZVzFp/Ll9WMV9RTDc1X1VY/NTAwX0NSMCwwLDUw/MCwyODFfLmpwZw" alt="Minions poster">
-        </div>
-        <div class="ticket-info">
-          <h3 class="movie-title">The Monster Minions</h3>
-          <div class="movie-meta">
-            <section class="genre">Comedy</section>
-            <section class="divider">•</section>
-            <section class="duration">1h 35min</section>
-          </div>
-          <div class="showtime-badge">Showtime: <strong>4:00 PM</strong></div>
-        </div>
-        <div class="ticket-stub">
-          <div class="barcode"></div>
-          <section class="stub-code">#TKT-2211</section>
-        </div>
-      </article>
-    </section>
-  </main>
+            <article class="movie">
+                <div class="ticket-poster">
+                    <img src="https://imgs.search.brave.com/5DHP4OH4o6bOSbVHnmIJEPJmLO-Tj7onEEOlDZphwRs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QlpEUmhNR1V5/TmprdE1UUmpZUzAw/TkRFd0xUaGhOemN0/TldObE1EY3pZemcx/TW1ZeFhrRXlYa0Zx/Y0dkZVFXcG5ZVzFp/Ll9WMV9RTDc1X1VY/NTAwX0NSMCwwLDUw/MCwyODFfLmpwZw"
+                        alt="Minions poster">
+                </div>
+                <div class="ticket-info">
+                    <h3 class="movie-title">The Monster Minions</h3>
+                    <div class="movie-meta">
+                        <section class="genre">Comedy</section>
+                        <section class="divider">•</section>
+                        <section class="duration">1h 35min</section>
+                    </div>
+                    <div class="showtime-badge">Estimated release: <strong>Sun, Sep 20, 2026</strong></div>
+                </div>
+                <div class="ticket-stub">
+                    <div class="barcode"></div>
+                    <section class="stub-code">#TKT-2211</section>
+                    <p class="booking-status">Not booked</p>
+                </div>
+            </article>
+            <article class="movie">
+                <div class="ticket-poster">
+                    <img src="https://imgs.search.brave.com/-HA8cN7PmNkU6zJmkIaSUddpssfC1LOIYbhc7RtxPYo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL1Mv/YXBsdXMtbWVkaWEt/bGlicmFyeS1zZXJ2/aWNlLW1lZGlhLzcy/M2EyMjg1LTk1ZmQt/NDFlMS05ZDlmLTM5/MTZmNmQ3MTJkMi5f/X0NSMCwwLDk3MCw2/MDBfUFQwX1NYOTcw/X1YxX19fLmpwZw"
+                        alt="Project Hail Mary poster">
+                </div>
+                <div class="ticket-info">
+                    <h3 class="movie-title">Project Hail Mary</h3>
+                    <div class="movie-meta">
+                        <section class="genre">Action</section>
+                        <section class="divider">•</section>
+                        <section class="duration">2h 4min</section>
+                    </div>
+                    <div class="showtime-badge">Release date: <strong>Fri, Mar 20, 2026</strong></div>
+                </div>
+                <div class="ticket-stub">
+                    <div class="barcode"></div>
+                    <section class="stub-code">#TKT-9482</section>
+                    <p class="booking-status">Not booked</p>
+                </div>
+            </article>
+            <article class="movie">
+                <div class="ticket-poster">
+                    <img src="https://imgs.search.brave.com/DcGvL2U-ioi_73wQBbbxv1__R2H0SNPQADX4EoMUhgg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/bmV3LXRveS1zdG9y/eS01LW1lcmNoLXYw/LTY3MzVlbXR0N2V3/ZzEuanBlZz93aWR0/aD01OTAmZm9ybWF0/PXBqcGcmYXV0bz13/ZWJwJnM9NjhlMTMz/OGFhNGU3MWUxMjI5/MjNmZTY3ZDc5YmNi/NjUxMGY3YTVmNw"
+                        alt="Toy Story 5 poster">
+                </div>
+                <div class="ticket-info">
+                    <h3 class="movie-title">Toy Story 5</h3>
+                    <div class="movie-meta">
+                        <section class="genre">Action</section>
+                        <section class="divider">•</section>
+                        <section class="duration">2h 4min</section>
+                    </div>
+                    <div class="showtime-badge">Release date: <strong>Fri, Jun 19, 2026</strong></div>
+                </div>
+                <div class="ticket-stub">
+                    <div class="barcode"></div>
+                    <section class="stub-code">#TKT-9482</section>
+                    <p class="booking-status">Not booked</p>
+                </div>
+            </article>
+            <article class="movie">
+                <div class="ticket-poster">
+                    <img src="https://imgs.search.brave.com/W8_upSdc5TSa478w4T1FcYtu9P_chVBgLPmizH7QOrw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kZWFk/bGluZS5jb20vd3At/Y29udGVudC91cGxv/YWRzLzIwMjYvMDYv/TUNETUlDSF9MRzAz/NC5qcGc_dz02ODEm/aD0zODMmY3JvcD0x"
+                        alt="Michael poster">
+                </div>
+                <div class="ticket-info">
+                    <h3 class="movie-title">Michael</h3>
+                    <div class="movie-meta">
+                        <section class="genre">Action</section>
+                        <section class="divider">•</section>
+                        <section class="duration">2h 4min</section>
+                    </div>
+                    <div class="showtime-badge">Estimated release: <strong>Fri, Apr 10, 2026</strong></div>
+                </div>
+                <div class="ticket-stub">
+                    <div class="barcode"></div>
+                    <section class="stub-code">#TKT-9482</section>
+                    <p class="booking-status">Not booked</p>
+                </div>
+            </article>
+            <article class="movie">
+                <div class="ticket-poster">
+                    <img src="https://imgs.search.brave.com/aVtu3_BLPaukBrIJ26e5W1UbB5Pj7FYH54SndtC_umU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzkxMGFpV0xFYlVM/LmpwZw"
+                        alt="A Quiet Place poster">
+                </div>
+                <div class="ticket-info">
+                    <h3 class="movie-title">A Quiet Place</h3>
+                    <div class="movie-meta">
+                        <section class="genre">Action</section>
+                        <section class="divider">•</section>
+                        <section class="duration">2h 4min</section>
+                    </div>
+                    <div class="showtime-badge">Estimated release: <strong>Fri, Oct 09, 2026</strong></div>
+                </div>
+                <div class="ticket-stub">
+                    <div class="barcode"></div>
+                    <section class="stub-code">#TKT-9482</section>
+                    <p class="booking-status">Not booked</p>
+                </div>
+            </article>
+            
+        </section>
+    </main>
+    <script src="index.js"></script>
 </body>
+
 </html>

@@ -10,8 +10,8 @@ body{
 }
 
 .text{
-    font-size: 20px;
-    font-family: "garamond", serif;
+    font-size: 15px;
+    font-family: "poppins", serif;
     
 }
 
@@ -129,6 +129,20 @@ padding: 20px 0px 20px 0px;
     border-radius: 5px;
     text-decoration: none;
 }
+
+/* section about */
+#about h1{
+    text-align: center;
+    font-family:"futura" , bold;
+    padding: 20px 0px 20px 0px;
+
+}
+#about h2{
+    text-align: center;
+    font-family: "futura", bold;
+    padding: 20px 0px 10px 0px;
+}
+
 
 
 

@@ -2,6 +2,7 @@
 body{
     background-color:black;
     color:white;
+    font-family: "poppins", sans-serif;
 }
 
 /* /* footer section * */
@@ -27,6 +28,13 @@ body{
     border-radius: 10px;
     text-align: center;
     width: 250px;
+}
+
+/* location section */
+.map{
+display: flex;
+justify-content: space-around;
+
 }
 
 

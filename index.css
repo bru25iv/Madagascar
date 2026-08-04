@@ -5,7 +5,23 @@ body{
     font-family: "poppins", sans-serif;
 }
 
-/* /* footer section * */
+.small-text{
+    font-size: 12px;
+}
+
+.text{
+    font-size: 20px;
+    font-family: "garamond", serif;
+    
+}
+
+/*  header section  */
+#header{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0px 10px 0px;
+}
 
 /* images section */
 .container{
@@ -21,6 +37,7 @@ body{
     height: 300px;
     object-fit: cover;
     border-radius: 10px;
+    padding-bottom: 10px;
 }
 .card{
     margin: 10px;
@@ -35,6 +52,11 @@ body{
 display: flex;
 justify-content: space-around;
 
+}
+#location h2{
+    text-align: center;
+    font-family: "poppins", serif;
+    padding: 20px 0px 20px 0px;
 }
 /* footer section */
 .social-media{
@@ -57,6 +79,13 @@ justify-content: space-around;
 #footer h3{
     text-align: center;
     margin: 0px;
+    font-family: "didot", serif;
 }
+
+#footer p{
+    text-align: center;
+    font-size: 12px;
+}
+
 
 

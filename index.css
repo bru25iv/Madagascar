@@ -36,5 +36,27 @@ display: flex;
 justify-content: space-around;
 
 }
+/* footer section */
+.social-media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0px 30px 0px;
+    gap: 20px;
+}
+.social-media a {
+    font-size: 30px;
+}
+.social-media a i:hover{
+    color: rgb(198, 57, 57);
+    transform: scale(1.5);
+    transition: 0.5s;
+
+}
+
+#footer h3{
+    text-align: center;
+    margin: 0px;
+}
 
 

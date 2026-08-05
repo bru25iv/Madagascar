@@ -1,8 +1,8 @@
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
-* {
+{
   box-sizing: border-box;
 }
 
@@ -10,8 +10,8 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   line-height: 1.5;
-  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
-  color: #0f172a;
+  background: #000000;
+  color: #e2e8f0;
 }
 
 .page {
@@ -20,23 +20,70 @@ body {
   padding: 0 1rem;
 }
 
-.hero {
+.hero p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.booking-panel {
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-.hero h1 {
-  margin: 0 0 0.25rem;
-  font-size: 2rem;
+.booking-panel h2 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  color: #f8fafc;
 }
 
-.hero p {
-  margin: 0;
-  color: #475569;
+.booking-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.booking-form label {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.booking-form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #334155;
+  border-radius: 0.75rem;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.booking-form input::placeholder {
+  color: #64748b;
+}
+
+.booking-form button {
+  width: fit-content;
+  border: 1px solid #334155;
+  background: #1f2937;
+  color: #e2e8f0;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.booking-form button:hover {
+  background: #334155;
 }
 
 .bookings h2 {
   margin-bottom: 1rem;
   font-size: 1.25rem;
+  color: #e2e8f0;
 }
 
 .movie {
@@ -44,18 +91,18 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: #111827;
+  border: 1px solid #334155;
   border-radius: 12px;
   padding: 1rem;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.04);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .movie:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.06);
 }
 
 .ticket-poster {
@@ -64,30 +111,14 @@ body {
   flex-shrink: 0;
   overflow: hidden;
   border-radius: 8px;
-  background: #f1f5f9;
-}
-
-.ticket-poster img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.ticket-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.35rem;
-  min-width: 0;
+  background: #1f2937;
 }
 
 .movie-title {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #f8fafc;
 }
 
 .movie-meta {
@@ -95,12 +126,12 @@ body {
   align-items: center;
   gap: 0.4rem;
   font-size: 0.9rem;
-  color: #64748b;
+  color: #94a3b8;
 }
 
 .showtime-badge {
   margin-top: 0.25rem;
-  color: #2563eb;
+  color: #60a5fa;
   font-weight: 600;
 }
 
@@ -110,7 +141,7 @@ body {
   align-items: flex-end;
   justify-content: center;
   min-width: 120px;
-  border-left: 2px dashed #cbd5e1;
+  border-left: 2px dashed #475569;
   padding-left: 1rem;
   gap: 0.45rem;
   text-align: right;
@@ -119,10 +150,10 @@ body {
 .barcode {
   width: 24px;
   height: 56px;
-  border-left: 4px solid #0f172a;
-  border-right: 4px solid #0f172a;
+  border-left: 4px solid #e2e8f0;
+  border-right: 4px solid #e2e8f0;
   border-radius: 4px;
-  background: repeating-linear-gradient(180deg, #0f172a 0 6px, #ffffff 6px 12px);
+  background: repeating-linear-gradient(180deg, #f8fafc 0 6px, #0f172a 6px 12px);
 }
 
 .stub-code {
@@ -134,13 +165,13 @@ body {
 .booking-status {
   margin: 0;
   font-size: 0.8rem;
-  color: #64748b;
+  color: #cbd5e1;
 }
 
 .booking-toggle {
-  border: 1px solid #cbd5e1;
-  background: #f8fafc;
-  color: #0f172a;
+  border: 1px solid #334155;
+  background: #1f2937;
+  color: #e2e8f0;
   padding: 0.45rem 0.8rem;
   border-radius: 999px;
   cursor: pointer;
@@ -150,38 +181,21 @@ body {
 }
 
 .booking-toggle:hover {
-  background: #e2e8f0;
+  background: #334155;
 }
 
 .movie.booked {
   border-color: #16a34a;
-  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.14);
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.18);
 }
 
 .booking-toggle.booked {
-  background: #dcfce7;
-  color: #166534;
+  background: #134e4a;
+  color: #a7f3d0;
   border-color: #4ade80;
 }
 
 .booking-status.booked {
-  color: #15803d;
+  color: #7dd3fc;
   font-weight: 700;
-}
-
-@media (max-width: 640px) {
-  .movie {
-    flex-wrap: wrap;
-  }
-
-  .ticket-stub {
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    border-left: none;
-    border-top: 2px dashed #cbd5e1;
-    padding-left: 0;
-    padding-top: 1rem;
-    margin-top: 0.5rem;
-  }
 }

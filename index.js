@@ -76,3 +76,19 @@ if (movies.length === 0) {
     movieList.appendChild(card);
   });
 }
+
+const backgrounds = [
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTNEMVVLSBr9WawQu7EcxcIuJDUUrX_vlWRUxMmo0mw&s", // Spider-Man Hero
+  "https://m.media-amazon.com/images/M/MV5BZjZkNzgyYTUtNjA1Yy00OTNmLTg5YWEtNmU4ZGM0ZjkwMmZhXkEyXkFqcGc@._V1_.jpg", // Minions and Monsters
+  "https://upload.wikimedia.org/wikipedia/en/9/90/The_Odyssey_%282026_film%29_poster.jpg", // The Odyssey
+  "https://image.tmdb.org/t/p/original/pxG26JdyuiDvJbSoucknaFiLeZD.jpg", // Toy Story 5
+  "https://image.tmdb.org/t/p/original/lGovcOtxugJPhfJjFKud9EbWtOA.jpg" // Motor City
+];
+
+let bgIndex = 0;
+document.body.style.backgroundImage = `url(${backgrounds[bgIndex]})`;
+
+setInterval(() => {
+  bgIndex = (bgIndex + 1) % backgrounds.length;
+  document.body.style.backgroundImage = `url(${backgrounds[bgIndex]})`;
+}, 5000); // changes every 5 seconds

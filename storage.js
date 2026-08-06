@@ -74,3 +74,8 @@ export function deleteBooking(id) {
     const bookings = getBookings().filter(booking => booking.id !== id);
     saveBooking(bookings);
 }
+
+// Check if a booking exists
+export function bookingExists(id) {
+    return getBookings().some(booking => booking.id === id);
+}

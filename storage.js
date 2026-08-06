@@ -34,19 +34,34 @@ export function addBooking(newBooking) {
  * Returns all bookings stored in localStorage.
  */
 //Get one booking by id
-export function getBookingById(id) {
-    return getBookings().find(booking => booking.id === id);
+export function addBooking(newBooking) {
+    const bookings = getBookings();
+
+    if (bookings.some(booking => booking.id === newBooking.id)) {
+        console.warn("Booking with this ID already exists.");
+        return;
+    }
+
+    bookings.push(newBooking);
+    saveBooking(bookings);
 }
+
+    return getBookings().find(booking => booking.id === id);
 /**
  * Returns all bookings stored in localStorage.
  */
 //update an existing booking
-export function updateBooking(id, updatedBooking) {
+export function addBooking(newBooking) {
     const bookings = getBookings();
-    const index = bookings.findIndex(booking => booking.id === id);
-    if (index !== -1) {
-        bookings[index] = updatedBooking;
-        saveBooking(bookings);
+
+    if (bookings.some(booking => booking.id === newBooking.id)) {
+        console.warn("Booking with this ID already exists.");
+        return;
+    }
+
+    bookings.push(newBooking);
+    saveBooking(bookings);
+}
     }
 }
 

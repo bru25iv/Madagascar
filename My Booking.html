@@ -25,62 +25,7 @@
             <a href="my bookings.html">My Bookings</a>
         </div>
     </section>
-    <hr>
-    <main class="page">
-        <header class="hero">
-            <h1>My Bookings</h1>
-            <p>View and manage your saved cinema bookings from one place.</p>
-        </header>
-
-        <section class="booking-panel">
-            <h2>Add a booking</h2>
-            <form class="booking-form">
-                <label>
-                    Movie title
-                    <input type="text" name="movie" placeholder="Enter movie title" required />
-                </label>
-                <label>
-                    Customer name
-                    <input type="text" name="customer" placeholder="Enter customer name" required />
-                </label>
-                <label>
-                    Showtime date
-                    <input type="date" name="showtime" required />
-                </label>
-                <label>
-                    Seat numbers
-                    <input type="text" name="seats" placeholder="e.g. A1, A2" required />
-                </label>
-                <label>
-                    Theater
-                    <select name="theater" required>
-                        <option value="">Select theater</option>
-                        <option value="Westgate">Westgate</option>
-                        <option value="Two Rivers">Two Rivers</option>
-                        <option value="Garden City">Garden City</option>
-                        <option value="Junction">Junction</option>
-                        <option value="Sarit">Sarit</option>
-                    </select>
-                </label>
-                <label>
-                    Seat count
-                    <input type="number" name="seatCount" min="1" max="10" value="1" required />
-                </label>
-                <label>
-                    Ticket price
-                    <input type="number" name="price" step="0.01" min="0" placeholder="0.00" required />
-                </label>
-                <button type="submit">Add booking</button>
-            </form>
-        </section>
-
-        <section class="bookings">
-            <h2>Saved bookings</h2>
-            <div class="booking-list"></div>
-            <p class="booking-empty">No bookings found.</p>
-        </section>
-    </main>
-    <main>
+  
         <hr>
 
 

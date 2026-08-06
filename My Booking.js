@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="booking-date">${formatShortDate(booking.bookingDate)}</span>
             </div>
             <div class="booking-meta">
+                <div><span>Theater</span><strong>${booking.theater || '-'}</strong></div>
                 <div><span>Showtime</span><strong>${formatShortDate(booking.showtime)}</strong></div>
                 <div><span>Ticket price</span><strong>${formatPrice(booking.ticketPrice)}</strong></div>
                 <div><span>Seats</span><strong>${booking.seats || '-'}</strong></div>
@@ -90,6 +91,17 @@ document.addEventListener('DOMContentLoaded', () => {
         form.className = 'edit-form';
         form.innerHTML = `
             <label>
+                Theater
+                <select name="theater" required>
+                    <option value="">Select theater</option>
+                    <option value="Westgate" ${booking.theater === 'Westgate' ? 'selected' : ''}>Westgate</option>
+                    <option value="Two Rivers" ${booking.theater === 'Two Rivers' ? 'selected' : ''}>Two Rivers</option>
+                    <option value="Garden City" ${booking.theater === 'Garden City' ? 'selected' : ''}>Garden City</option>
+                    <option value="Junction" ${booking.theater === 'Junction' ? 'selected' : ''}>Junction</option>
+                    <option value="Sarit" ${booking.theater === 'Sarit' ? 'selected' : ''}>Sarit</option>
+                </select>
+            </label>
+            <label>
                 Seat numbers
                 <input name="seats" value="${booking.seats || ''}" required />
             </label>
@@ -107,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const formData = new FormData(form);
             booking.seats = formData.get('seats').trim();
+            booking.theater = formData.get('theater');
             booking.seatCount = Number(formData.get('seatCount')) || 1;
             updateBooking(booking);
             renderBookings();
@@ -127,7 +140,8 @@ document.addEventListener('DOMContentLoaded', () => {
             id: `booking-${Date.now()}`,
             movieTitle: formData.get('movie').trim(),
             customerName: formData.get('customer').trim(),
-            seats: formData.get('seats').trim(),
+                seats: formData.get('seats').trim(),
+                theater: formData.get('theater'),
             seatCount: Number(formData.get('seatCount')) || 1,
             showtime: formData.get('showtime'),
             ticketPrice: Number(formData.get('price')) || 0,

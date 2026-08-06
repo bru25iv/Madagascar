@@ -161,4 +161,15 @@ p{
     margin: 0;
 }
 
+.continue{
+     width:200px;
+    background:green;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:18px;
+    font-size:22px;
+    cursor:pointer;
+}
+
 

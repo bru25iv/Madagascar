@@ -94,7 +94,11 @@ body {
   font-size: 0.95rem;
 }
 
-
+.booking-instructions {
+  margin-top: 1rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
 
 .movie-title {
   margin: 0;

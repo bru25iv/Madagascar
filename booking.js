@@ -1,60 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const bookingPanel = document.querySelector('.booking-panel');
     const bookingForm = document.querySelector('.booking-form');
-    let bookingList = document.querySelector('.booking-list');
-    let bookingEmpty = document.querySelector('.booking-empty');
-    const STORAGE_KEY = 'madagascarBookings';
-
-    if (!bookingList || !bookingEmpty) {
-        const resultsSection = document.createElement('section');
-        resultsSection.className = 'booking-results';
-        resultsSection.innerHTML = `
-            <h2>Your bookings</h2>
-            <div class="booking-empty">No bookings yet.</div>
-            <div class="booking-list"></div>
-        `;
-
-        if (bookingPanel && bookingPanel.parentNode) {
-            bookingPanel.insertAdjacentElement('afterend', resultsSection);
-        } else {
-            document.body.appendChild(resultsSection);
-        }
-
-        bookingList = resultsSection.querySelector('.booking-list');
-        bookingEmpty = resultsSection.querySelector('.booking-empty');
-    }
-
-    function getBookings() {
-        try {
-            return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-        } catch {
-            return [];
-        }
-    }
-
-    function saveBookings(bookings) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(bookings));
-    }
-
-    function addBooking(booking) {
-        const bookings = getBookings();
-        bookings.push(booking);
-        saveBookings(bookings);
-    }
-
-    function updateBooking(booking) {
-        const bookings = getBookings();
-        const index = bookings.findIndex((item) => item.id === booking.id);
-        if (index >= 0) {
-            bookings[index] = booking;
-            saveBookings(bookings);
-        }
-    }
-
-    function deleteBooking(id) {
-        const bookings = getBookings().filter((booking) => booking.id !== id);
-        saveBookings(bookings);
-    }
 
     function formatShortDate(value) {
         if (!value) return '-';
@@ -68,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function formatPrice(value) {
         const number = Number(value);
-        return Number.isFinite(number) ? `$${number.toFixed(2)}` : '-';
+        return Number.isFinite(number) ? $${number.toFixed(2)} : '-';
     }
 
     function renderBookings() {
@@ -214,10 +160,5 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        addBooking(newBooking);
-        bookingForm.reset();
-        renderBookings();
     });
-
-    renderBookings();
 });

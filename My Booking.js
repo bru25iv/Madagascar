@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderBookings() {
+        if (!bookingList) = getBooking();
         const bookings = getBookings();
         bookingList.innerHTML = '';
 

@@ -34,3 +34,9 @@ export function updateBooking(id, updatedBooking) {
         saveBooking(bookings);
     }
 }
+
+// Delete a booking by id
+export function deleteBooking(id) {
+    const bookings = getBookings().filter(booking => booking.id !== id);
+    saveBooking(bookings);
+}

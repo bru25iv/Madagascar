@@ -40,6 +40,10 @@ export function updateBooking(id, updatedBooking) {
     }
 }
 
+if (!newBooking.id) {
+    throw new Error("Booking must have an ID");
+}
+
 // Delete a booking by id
 export function deleteBooking(id) {
     const bookings = getBookings().filter(booking => booking.id !== id);

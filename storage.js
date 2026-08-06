@@ -1,7 +1,9 @@
 // storage.js
 
 const STORAGE_KEY = 'cinemaBoookings';
-
+/**
+ * Returns all bookings stored in localStorage.
+ */
 // Get all bookings
 export function getBookings() {
     try {
@@ -12,24 +14,32 @@ export function getBookings() {
         return [];
     }
 }
-
+/**
+ * Returns all bookings stored in localStorage.
+ */
 // Save a new booking
 export function saveBooking(booking) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(booking));
 }
-
+/**
+ * Returns all bookings stored in localStorage.
+ */
 //Add a new booking to the existing bookings
 export function addBooking(newBooking) {
     const bookings = getBookings();
     bookings.push(newBooking);
     saveBooking(bookings);
 }
-
+/**
+ * Returns all bookings stored in localStorage.
+ */
 //Get one booking by id
 export function getBookingById(id) {
     return getBookings().find(booking => booking.id === id);
 }
-
+/**
+ * Returns all bookings stored in localStorage.
+ */
 //update an existing booking
 export function updateBooking(id, updatedBooking) {
     const bookings = getBookings();

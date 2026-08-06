@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const bookingList = document.querySelector('.booking-list');
     const bookingEmpty = document.querySelector('.booking-empty');
+ 
     const bookingForm = document.querySelector('.booking-form');
-   const bookingInstructions = document.querySelector('.booking-instructions');
-    const browseMovies = document.querySelector('.browse-movies');
+
     function formatShortDate(value) {
         if (!value) return '-';
         return new Date(value).toLocaleDateString(undefined, {
@@ -24,11 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
         bookingList.innerHTML = '';
 
         if (!bookings.length) {
-            bookingEmpty.style.display = 'block';
+            if (bookingEmpty) bookingEmpty.style.display = 'block';
+            if (bookingInstructions) bookingInstructions.style.display = 'block';
+            if (browseMovies) browseMovies.style.display = 'block';
             return;
         }
 
-        bookingEmpty.style.display = 'none';
+        if (bookingEmpty) bookingEmpty.style.display = 'none';
+        if (bookingInstructions) bookingInstructions.style.display = 'none';
+        if (browseMovies) browseMovies.style.display = 'none';
 
         bookings.forEach((booking) => {
             bookingList.appendChild(createBookingCard(booking));

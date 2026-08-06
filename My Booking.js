@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const bookingList = document.querySelector('.booking-list');
     const bookingEmpty = document.querySelector('.booking-empty');
@@ -118,9 +117,18 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', (event) => {
             event.preventDefault();
             const formData = new FormData(form);
-            booking.seats = formData.get('seats').trim();
-            booking.theater = formData.get('theater');
-            booking.seatCount = Number(formData.get('seatCount')) || 1;
+            const updatedSeats = formData.get('seats').trim();
+            const updatedTheater = formData.get('theater');
+            const updatedSeatCount = Number(formData.get('seatCount')) || 1;
+
+            if (!updatedSeats || !updatedTheater) {
+                window.alert('Please fill in all required fields before saving.');
+                return;
+            }
+
+            booking.seats = updatedSeats;
+            booking.theater = updatedTheater;
+            booking.seatCount = updatedSeatCount;
             updateBooking(booking);
             renderBookings();
         });
@@ -140,16 +148,16 @@ document.addEventListener('DOMContentLoaded', () => {
             id: `booking-${Date.now()}`,
             movieTitle: formData.get('movie').trim(),
             customerName: formData.get('customer').trim(),
-                seats: formData.get('seats').trim(),
-                theater: formData.get('theater'),
+            seats: formData.get('seats').trim(),
+            theater: formData.get('theater'),
             seatCount: Number(formData.get('seatCount')) || 1,
             showtime: formData.get('showtime'),
             ticketPrice: Number(formData.get('price')) || 0,
             bookingDate: new Date().toISOString(),
         };
 
-        if (!newBooking.movieTitle || !newBooking.customerName) {
-            alert('Please fill in the movie title and customer name.');
+        if (!newBooking.movieTitle || !newBooking.customerName || !newBooking.seats || !newBooking.theater || !newBooking.showtime) {
+            window.alert('Please fill in all required fields before adding a booking.');
             return;
         }
 

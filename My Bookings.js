@@ -181,6 +181,5 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'booking.html';
         });
     }
-
     renderBookings();
 });

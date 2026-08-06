@@ -32,7 +32,6 @@ if (movies.length === 0) {
             <h2>${movie.title}</h2>
             <p><strong>Genre:</strong> ${movie.genre}</p>
             <p><strong>Showtime:</strong> ${movie.showtime}</p>
-            <p><strong>Price:</strong> ${movie.price}</p>
             <button>Book Now</button>
         `;
 

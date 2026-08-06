@@ -1,6 +1,5 @@
 const movieList = document.getElementById("movie-list");
 
-// Read movies from localStorage (your teammate will add them)
 const movies = JSON.parse(localStorage.getItem("movies")) || [];
 
 if (movies.length === 0) {
@@ -18,7 +17,6 @@ if (movies.length === 0) {
       <button>Book Now</button>
     `;
 
-    // Add booking logic inside the loop
     const button = card.querySelector("button");
     button.addEventListener("click", () => {
       let bookings = JSON.parse(localStorage.getItem("bookings")) || [];

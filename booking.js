@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const bookingList = document.querySelector('.booking-list');
-    const bookingEmpty = document.querySelector('.booking-empty');
+    const bookingPanel = document.querySelector('.booking-panel');
     const bookingForm = document.querySelector('.booking-form');
-   const bookingInstructions = document.querySelector('.booking-instructions');
-    const browseMovies = document.querySelector('.browse-movies');
+
     function formatShortDate(value) {
         if (!value) return '-';
         return new Date(value).toLocaleDateString(undefined, {
@@ -16,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function formatPrice(value) {
         const number = Number(value);
-        return Number.isFinite(number) ? `$${number.toFixed(2)}` : '-';
+        return Number.isFinite(number) ? $${number.toFixed(2)} : '-';
     }
 
     function renderBookings() {
@@ -162,10 +160,5 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        createBooking(newBooking);
-        bookingForm.reset();
-        renderBookings();
     });
-
-    renderBookings();
 });

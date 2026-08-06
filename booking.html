@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <section id="header">
+        <div class="logo">
+            <img src="https://t3.ftcdn.net/jpg/03/24/30/24/360_F_324302474_PPtpdsBgyhJjxCaWXDwrOzdlYRlPmIh2.jpg"
+                alt="cinema logo" width="100">
+            <p>lights, camera, action!</p>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="booking.html">Booking</a>
+            <a href="my bookings.html">My Bookings</a>
+        </div>
+    </section>
+    <main>
+        <form>
+            <h1>TICKET BOOKING</h1>
+
+            <section>
+
+                <h2>SELECT CINEMA</h2>
+                <p>Select the cinema you would like to watch the movie</p>
+
+                <div class="theatre">
+                    <button>Westgate</button>
+                    <button>Two Rivers</button>
+                    <button>Garden City</button>
+                    <button>Sarit</button>
+                    <button>Junction</button>
+
+
+                </div>
+
+
+                <h2>PICK A DATE</h2>
+                <p>Choose a date that you would like to watch the movie</p>
+
+                <div class="day">
+                    <button>5th August 2026</button>
+                    <button>6th August 2026</button>
+                    <button>7th August 2026</button>
+                    <button>8th August 2026</button>
+                    <button>9th August 2026</button>
+                    <button>10th August 2026</button>
+                    <button>11th August 2026</button>
+                    <button>12th August 2026</button>
+                </div>
+
+
+                <h2>CHOOSE THE TIME</h2>
+                <p>Select the time you would like to see the movie</p>
+
+                <div class="time">
+                    <button>11:00am</button>
+                    <button>12:00pm</button>
+                    <button>1:00pm</button>
+                    <button>2:00pm</button>
+                    <button>4:00pm</button>
+                    <button>6:30pm</button>
+                    <button>7:00pm</button>
+                    <button>9:00pm</button>
+                </div>
+
+
+                <h2>SELECT TICKET</h2>
+                <p>Choose your ticket please</p>
+
+                <div class="ticket" id="tickets">
+                  <div class="ticket-option">
+                    <h1>Ksh 620</h1>
+                    <h2>VIP</h2>
+                  </div>
+                  <div class="ticket-option">
+                    <h1>Ksh 470</h1>
+                    <h2>Standard</h2>
+                  </div>
+                </div>
+
+                <button class="continue">
+                    Continue
+                </button>
+
+                <h2>Select Seat</h2>
+
+
+
+            </section>
+        </form>
+    </main>
+
+    <section class="booking-panel">
+            <h2>Add a booking</h2>
+            <form class="booking-form">
+                <label>
+                    Movie title
+                    <input type="text" name="movie" placeholder="Enter movie title" required />
+                </label>
+                <label>
+                    Customer name
+                    <input type="text" name="customer" placeholder="Enter customer name" required />
+                </label>
+                <label>
+                    Showtime date
+                    <input type="date" name="showtime" required />
+                </label>
+                <label>
+                    Seat numbers
+                    <input type="text" name="seats" placeholder="e.g. A1, A2" required />
+                </label>
+                <label>
+                    Theater
+                    <select name="theater" required>
+                        <option value="">Select theater</option>
+                        <option value="Westgate">Westgate</option>
+                        <option value="Two Rivers">Two Rivers</option>
+                        <option value="Garden City">Garden City</option>
+                        <option value="Junction">Junction</option>
+                        <option value="Sarit">Sarit</option>
+                    </select>
+                </label>
+                <label>
+                    Seat count
+                    <input type="number" name="seatCount" min="1" max="10" value="1" required />
+                </label>
+                <label>
+                    Ticket price
+                    <input type="number" name="price" step="0.01" min="0" placeholder="0.00" required />
+                </label>
+                <button type="submit">Add booking</button>
+            </form>
+        </section>
+
+        <main>
+<hr>
+
+
+        <h3>Follow Us</h3>
+        <a href="#" class="btn">Back to Top</a>
+        <div class="social-media">
+        <a href="https://www.facebook.com/cinemabooking" target="_blank"><i class="fa-brands fa-square-facebook" style="color: rgb(255, 18, 0);"></i></a>
+        <a href="https://www.twitter.com/cinemabooking" target="_blank"><i class="fa-brands fa-square-x-twitter" style="color: rgb(255, 18, 0);"></i></a>
+        <a href="https://www.instagram.com/cinemabooking" target="_blank"><i class="fa-brands fa-square-instagram" style="color: rgb(255, 18, 0);"></i></a>
+        <a href="https://www.youtube.com/cinemabooking" target="_blank"><i class="fa-brands fa-square-youtube" style="color: rgb(255, 18, 0);"></i></a>
+    
+    </div>
+    <hr>
+    <p class="small-text">&copy; 2024 Cinema Booking Website. All rights reserved.</p>
+
+   </main>   
+
+        <script src="/booking.js"></script>
+        <script src="bookingStorage.js"></script>
+
+</body>
+
+</html>

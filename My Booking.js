@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const bookingList = document.querySelector('.booking-list');
     const bookingEmpty = document.querySelector('.booking-empty');
-    const bookingForm = document.querySelector('.booking-form');
-   const bookingInstructions = document.querySelector('.booking-instructions');
+    const bookingInstructions = document.querySelector('.booking-instructions');
     const browseMovies = document.querySelector('.browse-movies');
+
+    const bookingForm = document.querySelector('.booking-form');
+
     function formatShortDate(value) {
         if (!value) return '-';
         return new Date(value).toLocaleDateString(undefined, {
@@ -24,11 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
         bookingList.innerHTML = '';
 
         if (!bookings.length) {
-            bookingEmpty.style.display = 'block';
+            if (bookingEmpty) bookingEmpty.style.display = 'block';
+            if (bookingInstructions) bookingInstructions.style.display = 'block';
+            if (browseMovies) browseMovies.style.display = 'block';
             return;
         }
 
-        bookingEmpty.style.display = 'none';
+        if (bookingEmpty) bookingEmpty.style.display = 'none';
+        if (bookingInstructions) bookingInstructions.style.display = 'none';
+        if (browseMovies) browseMovies.style.display = 'none';
 
         bookings.forEach((booking) => {
             bookingList.appendChild(createBookingCard(booking));
@@ -166,6 +172,15 @@ document.addEventListener('DOMContentLoaded', () => {
         bookingForm.reset();
         renderBookings();
     });
+
+    // click handler for the browse link/button
+    if (browseMovies) {
+        browseMovies.style.cursor = 'pointer';
+        browseMovies.addEventListener('click', (e) => {
+            // navigate to booking page (update path if different)
+            window.location.href = 'booking.html';
+        });
+    }
 
     renderBookings();
 });

@@ -1,6 +1,5 @@
 const movieList = document.getElementById("movie-list");
 
-// Dummy dataset for testing (remove later when teammate adds localStorage code)
 localStorage.setItem("movies", JSON.stringify([
   {
     title: "Spider-Man: Brand New Day",
@@ -19,8 +18,6 @@ localStorage.setItem("movies", JSON.stringify([
     trailer: "https://www.youtube.com/embed/EXAMPLE_ID"
   }
 ]));
-
-// Get movies from localStorage
 const movies = JSON.parse(localStorage.getItem("movies")) || [];
 
 if (movies.length === 0) {
@@ -42,3 +39,10 @@ if (movies.length === 0) {
         movieList.appendChild(card);
     });
 }
+const button = card.querySelector("button");
+button.addEventListener("click", () => {
+  let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+  bookings.push(movie);
+  localStorage.setItem("bookings", JSON.stringify(bookings));
+  alert(`${movie.title} has been booked!`);
+});

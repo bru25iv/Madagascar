@@ -2,10 +2,15 @@
 
 const STORAGE_KEY = 'cinemaBoookings';
 
-//Get all bookings
+// Get all bookings
 export function getBookings() {
-    const bookings = localStorage.getItem(STORAGE_KEY);
-    return bookings ? JSON.parse(bookings) : [];
+    try {
+        const bookings = localStorage.getItem(STORAGE_KEY);
+        return bookings ? JSON.parse(bookings) : [];
+    } catch (error) {
+        console.error("Error loading bookings:", error);
+        return [];
+    }
 }
 
 // Save a new booking

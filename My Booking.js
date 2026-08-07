@@ -22,8 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderBookings() {
-        const bookings = getBookings();
-        bookingList.innerHTML = '';
+    if (!bookingList) return; // no bookings list on this page — nothing to render
+    const bookings = getBookings();
+    bookingList.innerHTML = '';
+    
 
         if (!bookings.length) {
             if (bookingEmpty) bookingEmpty.style.display = 'block';

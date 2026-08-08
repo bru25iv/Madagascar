@@ -1,3 +1,4 @@
+
 const BOOKING_STORAGE_KEY = 'cinemaBookings';
 
 function getBookings() {

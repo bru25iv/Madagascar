@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const bookingPanel = document.querySelector('.booking-panel');
+    const bookingList = document.querySelector('.booking-list');
+    const bookingEmpty = document.querySelector('.booking-empty');
+    const bookingInstructions = document.querySelector('.booking-instructions');
+    const browseMovies = document.querySelector('.browse-movies');
+
     const bookingForm = document.querySelector('.booking-form');
 
     function formatShortDate(value) {
@@ -14,19 +18,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function formatPrice(value) {
         const number = Number(value);
-        return Number.isFinite(number) ? $${number.toFixed(2)} : '-';
+        return Number.isFinite(number) ? `$${number.toFixed(2)}` : '-';
     }
 
     function renderBookings() {
+        if (!bookingList) return; // no bookings list on this page — nothing to render
         const bookings = getBookings();
         bookingList.innerHTML = '';
 
+
         if (!bookings.length) {
-            bookingEmpty.style.display = 'block';
+            if (bookingEmpty) bookingEmpty.style.display = 'block';
+            if (bookingInstructions) bookingInstructions.style.display = 'block';
+            if (browseMovies) browseMovies.style.display = 'block';
             return;
         }
 
-        bookingEmpty.style.display = 'none';
+        if (bookingEmpty) bookingEmpty.style.display = 'none';
+        if (bookingInstructions) bookingInstructions.style.display = 'none';
+        if (browseMovies) browseMovies.style.display = 'none';
 
         bookings.forEach((booking) => {
             bookingList.appendChild(createBookingCard(booking));
@@ -50,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="booking-meta">
                 <div><span>Theater</span><strong>${booking.theater || '-'}</strong></div>
                 <div><span>Showtime</span><strong>${formatShortDate(booking.showtime)}</strong></div>
-                <div><span>Ticket price</span><strong>${formatPrice(booking.ticketPrice)}</strong></div>
+                <div><span>Ticket price</span><strong>${booking.ticketPrice ?? '-'}</strong></div>
                 <div><span>Seats</span><strong>${booking.seats || '-'}</strong></div>
                 <div><span>Seat count</span><strong>${booking.seatCount ?? '-'}</strong></div>
             </div>
@@ -68,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const deleteButton = document.createElement('button');
         deleteButton.type = 'button';
         deleteButton.className = 'delete-btn';
-        deleteButton.textContent = 'Delete';
+        deleteButton.textContent = 'Cancel booking';
         deleteButton.addEventListener('click', () => {
             if (!confirm('Delete this booking?')) return;
             deleteBooking(booking.id);
@@ -139,26 +149,80 @@ document.addEventListener('DOMContentLoaded', () => {
         card.appendChild(form);
     }
 
-    bookingForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const formData = new FormData(bookingForm);
+    // booking form behavior only if the current page contains the booking form
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(bookingForm);
 
-        const newBooking = {
-            id: `booking-${Date.now()}`,
-            movieTitle: formData.get('movie').trim(),
-            customerName: formData.get('customer').trim(),
-            seats: formData.get('seats').trim(),
-            theater: formData.get('theater'),
-            seatCount: Number(formData.get('seatCount')) || 1,
-            showtime: formData.get('showtime'),
-            ticketPrice: Number(formData.get('price')) || 0,
-            bookingDate: new Date().toISOString(),
-        };
+            const newBooking = {
+                id: `booking-${Date.now()}`,
+                movieTitle: formData.get('movie').trim(),
+                customerName: formData.get('customer').trim(),
+                seats: formData.get('seats').trim(),
+                theater: formData.get('theater'),
+                seatCount: Number(formData.get('seatCount')) || 1,
+                showtime: formData.get('showtime'),
+                ticketPrice: formData.get('price').trim() || '',
+                bookingDate: new Date().toISOString(),
+            };
 
-        if (!newBooking.movieTitle || !newBooking.customerName || !newBooking.seats || !newBooking.theater || !newBooking.showtime) {
-            window.alert('Please fill in all required fields before adding a booking.');
-            return;
+            if (!newBooking.movieTitle || !newBooking.customerName || !newBooking.seats || !newBooking.theater || !newBooking.showtime) {
+                window.alert('Please fill in all required fields before adding a booking.');
+                return;
+            }
+
+            createBooking(newBooking);
+            // after saving, go to My Bookings so the booked movie is displayed
+            window.location.href = 'my bookings.html';
+        });
+
+        const params = new URLSearchParams(location.search);
+        const titleParam = params.get('title');
+        const priceParam = params.get('price');
+        const dateParam = params.get('date');
+
+        if (titleParam) {
+            bookingForm.elements['movie'].value = titleParam;
+            bookingForm.elements['movie'].readOnly = true;
+        }
+        if (priceParam) {
+            bookingForm.elements['price'].value = priceParam;
+            bookingForm.elements['price'].readOnly = true;
+        }
+        if (dateParam) {
+            bookingForm.elements['showtime'].value = dateParam;
+            bookingForm.elements['showtime'].readOnly = true;
         }
 
-    });
+        const clearAllBtn = document.getElementById('clearBookings');
+        if (clearAllBtn) {
+            clearAllBtn.addEventListener('click', () => {
+                Array.from(bookingForm.elements).forEach((element) => {
+                    if (element.readOnly || element.disabled) return;
+
+                    if (element.type === 'checkbox' || element.type === 'radio') {
+                        element.checked = element.defaultChecked;
+                        return;
+                    }
+
+                    element.value = element.defaultValue;
+                });
+            });
+        }
+    }
+
+    // click handler for the browse link/button
+    if (browseMovies) {
+        browseMovies.style.cursor = 'pointer';
+        browseMovies.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    }
+
+    renderBookings();
 });
+
+
+
+

@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const bookingList = document.querySelector('.booking-list');
     const bookingEmpty = document.querySelector('.booking-empty');
@@ -199,13 +200,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (clearAllBtn) {
             clearAllBtn.addEventListener('click', () => {
                 Array.from(bookingForm.elements).forEach((element) => {
-                    if (element.readOnly || element.disabled) return;
+                    // preserve readonly, disabled, or explicitly fixed fields
+                    if (element.readOnly || element.disabled || element.dataset.fixed === 'true') return;
 
                     if (element.type === 'checkbox' || element.type === 'radio') {
                         element.checked = element.defaultChecked;
                         return;
                     }
 
+                    if (element.tagName.toLowerCase() === 'select') {
+                        // restore to default selected option
+                        Array.from(element.options).forEach(opt => {
+                            opt.selected = !!opt.defaultSelected;
+                        });
+                        return;
+                    }
+
+                    // restore to the element's defaultValue (usually empty or initial value)
                     element.value = element.defaultValue;
                 });
             });
@@ -222,7 +233,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderBookings();
 });
-
-
-
-

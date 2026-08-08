@@ -1,7 +1,3 @@
-
-
-
-
 const movieList = document.getElementById("movie-list");
 
 const movies = [
@@ -94,16 +90,6 @@ setInterval(() => {
     bgIndex = (bgIndex + 1) % backgrounds.length;
     document.body.style.backgroundImage = `url(${backgrounds[bgIndex]})`;
 }, 5000);
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,4 +1,3 @@
-
 const BOOKING_STORAGE_KEY = 'cinemaBookings';
 
 function getBookings() {
@@ -29,3 +28,8 @@ function deleteBooking(id) {
     const bookings = getBookings().filter((booking) => booking.id !== id);
     saveBookings(bookings);
 }
+
+
+
+
+

@@ -1,4 +1,4 @@
-<<<<<<< HEAD:index.css
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -121,7 +121,7 @@ social-media{
 
 =======
 /* body section */
->>>>>>> 0ad23f00076ddb1147bfd99d39855feca9b6e667:about.css
+
 body{
     background-color:black;
     color:white;
@@ -141,7 +141,7 @@ body{
 <<<<<<< HEAD:index.css
 =======
 /*  header section  */
->>>>>>> 0ad23f00076ddb1147bfd99d39855feca9b6e667:about.css
+
 #header{
     display:flex;
     align-items: center;
@@ -178,7 +178,7 @@ body{
 <<<<<<< HEAD:index.css
 =======
 /* }main section */ 
->>>>>>> 0ad23f00076ddb1147bfd99d39855feca9b6e667:about.css
+
 main{
     padding-top: 20px;  
 }

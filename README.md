@@ -32,7 +32,7 @@ A web application that displays a list of movies currently showing, complete wit
 ## Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/movie-listing.git
+   git clone https://github.com/bru25iv/Madagascar/tree/development
 2. Navigate into the project:
    cd Madagascar
 3. Open the project in your visual studio code.

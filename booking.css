@@ -16,6 +16,11 @@
   align-items: center;
 }
 
+.logo p {
+  font-style: italic;
+  font-size: 15px;
+}
+
 .logo img {
   max-height: 64px
 }

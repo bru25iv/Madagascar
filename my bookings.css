@@ -19,6 +19,11 @@
   max-height: 64px
 }
 
+.logo p {
+  font-style: italic;
+  font-size: 15px;
+}
+
 .nav-links {
   display: flex;
   gap: 20px;

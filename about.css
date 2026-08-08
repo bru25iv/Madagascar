@@ -23,6 +23,11 @@ body {
     align-items: center
 }
 
+.logo p {
+    font-style: italic;
+    font-size: 15px;
+}
+
 .nav-links {
     display: flex;
     gap: 20px;

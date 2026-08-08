@@ -85,5 +85,5 @@ Then- they should be able to see the movie, cinema, date, time, ticket type, and
 ## Licence
 This project is licensed under the MIT License.
 
-Copyright (c) 2024 Cinema Bokking Website
+Copyright (c) 2026 Cinema Bokking Website
 
